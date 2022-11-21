@@ -178,7 +178,10 @@ struct Subsys {
 
 impl Cgroup {
     fn new(version: CgroupVersion, dir: PathBuf) -> Cgroup {
-        Cgroup { version: version, base: dir }
+        Cgroup {
+            version: version,
+            base: dir,
+        }
     }
 
     fn translate(mntinfo: MountInfo, subsys: Subsys) -> Option<Cgroup> {
